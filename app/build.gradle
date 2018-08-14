@@ -50,11 +50,11 @@ dependencies {
     implementation Dependencies.retrofitConvertGson
 
     implementation Dependencies.glide
-//    annotationProcessor Dependencies.annotation
     annotationProcessor Dependencies.glideCompiler
 
     implementation Dependencies.timber
 
+    implementation Dependencies.dagger
     implementation Dependencies.daggerAndroid
     implementation Dependencies.daggerSupport
     kapt Dependencies.daggerCompiler

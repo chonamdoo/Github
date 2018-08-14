@@ -26,6 +26,7 @@ object Dependencies{
 
     val timber ="com.jakewharton.timber:timber:${Versions.timber}"
 
+    val dagger = "com.google.dagger:dagger:${Versions.dagger}"
     val daggerAndroid = "com.google.dagger:dagger-android:${Versions.dagger}"
     val daggerSupport = "com.google.dagger:dagger-android-support:${Versions.dagger}"
     val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
