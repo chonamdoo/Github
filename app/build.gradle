@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Versions.compileSdk
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode Versions.versionCode
+        versionName Versions.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation Dependencies.appCompat
+    implementation Dependencies.material
+    implementation Dependencies.recyclerView
+    implementation Dependencies.constraintLayout
+
+    implementation Dependencies.ktx
+    implementation Dependencies.coroutinesAndroid
+
+    implementation Dependencies.lifecycle
+    implementation Dependencies.room
+    implementation Dependencies.roomRxjava2
+    kapt Dependencies.roomCompiler
+
+    implementation Dependencies.rxAndroid
+    implementation Dependencies.rxKotlin
+
+    implementation Dependencies.okhttp
+    implementation Dependencies.okhttpLogging
+
+    implementation Dependencies.stetho
+    implementation Dependencies.stethoOkhttp
+
+    implementation Dependencies.retrofit
+    implementation Dependencies.retrofitAdapter
+    implementation Dependencies.retrofitConvertGson
+
+    implementation Dependencies.glide
+//    annotationProcessor Dependencies.annotation
+    annotationProcessor Dependencies.glideCompiler
+
+    implementation Dependencies.timber
+
+    implementation Dependencies.daggerAndroid
+    implementation Dependencies.daggerSupport
+    kapt Dependencies.daggerCompiler
+    kapt Dependencies.daggerProcessor
+
+
+    testImplementation Dependencies.junit
+    androidTestImplementation Dependencies.espresso
+    androidTestImplementation Dependencies.espressoContrib
+
+    testImplementation Dependencies.mockWebServer
+    testImplementation Dependencies.mockito
+    androidTestImplementation Dependencies.mockitoAndroid
+
+    debugImplementation Dependencies.memoryLeakDebug
+    releaseImplementation Dependencies.memoryLeakRelease
+}
